@@ -14,7 +14,8 @@
     "lodash": "^3.10.1",
     "ngrok": "^2.2.2",
     "node-schedule": "^1.1.1",
-    "twilio": "^2.10.0"
+    "twilio": "^2.10.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "chai": "^3.4.1",
@@ -28,12 +29,15 @@
     "node": "4.3.2"
   },
   "scripts": {
-    "test_backend": "env LOCAL_TESTING=TRUE mocha --timeout 20000 test/backend_scripts/*/*.js"
+    "test_backend": "env LOCAL_TESTING=TRUE mocha --timeout 20000 test/backend_scripts/*/*.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
     "url": ""
   },
   "author": "aliotta@zumepizza.com",
-  "license": "ISC"
+  "license": "ISC",
+  "snyk": true
 }
